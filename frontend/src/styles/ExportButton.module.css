@@ -1,0 +1,32 @@
+.exportButton {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.exportButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.exportButton:active {
+  transform: scale(0.95);
+}
+
+/* Dark mode styles */
+:global(.dark-theme) .exportButton {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+:global(.dark-theme) .exportButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}

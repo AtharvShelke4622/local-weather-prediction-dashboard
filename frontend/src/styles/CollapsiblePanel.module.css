@@ -1,0 +1,133 @@
+.panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.panel:hover {
+  box-shadow: 0 12px 40px rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+  transition: all 0.3s ease;
+}
+
+.header:hover {
+  background: rgba(102, 126, 234, 0.05);
+}
+
+.title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a202c;
+}
+
+.toggleButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: #667eea;
+}
+
+.toggleButton:hover {
+  background: rgba(102, 126, 234, 0.1);
+  transform: scale(1.1);
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-size: 0.8rem;
+}
+
+.arrowUp {
+  transform: rotate(-180deg);
+}
+
+.arrowDown {
+  transform: rotate(0deg);
+}
+
+.content {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.contentOpen {
+  max-height: 2000px;
+  opacity: 1;
+  padding: 24px;
+}
+
+.contentClosed {
+  max-height: 0;
+  opacity: 0;
+  padding: 0 24px;
+}
+
+/* Collapsed state adjustments */
+.panel.closed {
+  margin-bottom: 8px;
+}
+
+.panel.closed .header {
+  border-bottom: none;
+}
+
+.panel.closed:hover {
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.15);
+}
+
+/* Dark mode styles */
+:global(.dark-theme) .panel {
+  background: rgba(26, 32, 44, 0.95);
+  border: 1px solid rgba(74, 85, 104, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+:global(.dark-theme) .panel:hover {
+  box-shadow: 0 12px 40px rgba(102, 126, 234, 0.3);
+  border-color: #667eea;
+}
+
+:global(.dark-theme) .header {
+  border-bottom: 1px solid rgba(74, 85, 104, 0.2);
+}
+
+:global(.dark-theme) .header:hover {
+  background: rgba(102, 126, 234, 0.1);
+}
+
+:global(.dark-theme) .title {
+  color: #e2e8f0;
+}
+
+:global(.dark-theme) .toggleButton {
+  color: #9f7aea;
+}
+
+:global(.dark-theme) .toggleButton:hover {
+  background: rgba(159, 122, 234, 0.1);
+}
