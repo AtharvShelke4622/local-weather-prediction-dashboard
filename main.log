@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "D:\cgrome download\local-weather-prediction-dashboard\backend\main.py", line 9, in <module>
+    from database import AsyncSessionLocal, init_models, ping_db
+  File "D:\cgrome download\local-weather-prediction-dashboard\backend\database.py", line 6, in <module>
+    engine = create_async_engine(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\ext\asyncio\engine.py", line 121, in create_async_engine
+    return AsyncEngine(sync_engine)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\ext\asyncio\engine.py", line 1031, in __init__
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: The asyncio extension requires an async driver to be used. The loaded 'pysqlite' is not async.

@@ -1,0 +1,6 @@
+2026-01-17 21:19:29,096 - main - INFO - {"event": "Application started successfully", "logger": "main", "level": "info", "timestamp": "2026-01-17T15:49:29.096621Z"}
+2026-01-17 21:19:29,096 - audit - INFO - {"event_type": "application_startup", "severity": "info", "component": "main_api", "timestamp": "2026-01-17T15:49:29.096621Z", "details": {"version": "2.0.0"}, "event": "system_event", "logger": "audit", "level": "info"}
+2026-01-17 21:21:05,136 - main - INFO - {"event": "Application started successfully", "logger": "main", "level": "info", "timestamp": "2026-01-17T15:51:05.136187Z"}
+2026-01-17 21:21:05,136 - audit - INFO - {"event_type": "application_startup", "severity": "info", "component": "main_api", "timestamp": "2026-01-17T15:51:05.136187Z", "details": {"version": "2.0.0"}, "event": "system_event", "logger": "audit", "level": "info"}
+2026-01-17 21:21:59,306 - main - INFO - {"event": "Application started successfully", "logger": "main", "level": "info", "timestamp": "2026-01-17T15:51:59.306764Z"}
+2026-01-17 21:21:59,306 - audit - INFO - {"event_type": "application_startup", "severity": "info", "component": "main_api", "timestamp": "2026-01-17T15:51:59.306764Z", "details": {"version": "2.0.0"}, "event": "system_event", "logger": "audit", "level": "info"}

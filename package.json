@@ -1,0 +1,12 @@
+{
+  "name": "weather-backend",
+  "version": "1.0.0",
+  "description": "Weather Prediction Dashboard Backend",
+  "main": "main.py",
+  "scripts": {
+    "start": "uvicorn main:app --host 0.0.0.0 --port $PORT"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}

@@ -1,0 +1,4 @@
+  File "D:\cgrome download\local-weather-prediction-dashboard\backend\model_server_enhanced.py", line 283
+    """Create ensemble predictions from multiple models"""
+    ^
+IndentationError: expected an indented block after function definition on line 282
