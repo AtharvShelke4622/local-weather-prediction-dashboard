@@ -1,0 +1,52 @@
+version: "3.9"
+services:
+  db:
+    image: timescale/timescaledb:latest-pg14
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=weather
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    env_file: .env.example
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://postgres:postgres@db:5432/weather
+      - MODEL_SERVER_URL=http://modelserver:8001
+      - CORS_ORIGINS=http://localhost:5173,http://localhost:3000
+    depends_on:
+      db:
+        condition: service_healthy
+      modelserver:
+        condition: service_started
+    volumes:
+      - models:/models
+    ports:
+      - "8000:8000"
+    command: ["bash","-lc","uvicorn backend.main:app --host 0.0.0.0 --port 8000"]
+
+  modelserver:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    env_file: .env.example
+    volumes:
+      - models:/models
+    ports:
+      - "8001:8001"
+    command: ["bash","-lc","python -u backend/model_server.py"]
+
+volumes:
+  db_data:
+  models:

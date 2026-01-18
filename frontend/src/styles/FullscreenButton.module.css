@@ -1,0 +1,55 @@
+.fullscreenButton {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  transform: rotate(0deg);
+}
+
+.fullscreenButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+:global(.dark-theme) .fullscreenButton {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+:global(.dark-theme) .fullscreenButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Fullscreen styles */
+:global(:fullscreen) .container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+:global(:fullscreen) .dark-theme .container {
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+}
+
+:global(:fullscreen) .layout {
+  max-width: 100%;
+  padding: 40px;
+}
+
+:global(:fullscreen) .main {
+  gap: 40px;
+}
+
+:global(:fullscreen) .cards {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+:global(:fullscreen) footer {
+  display: none;
+}
